@@ -6,7 +6,7 @@ export default function Header() {
     <div className='header'>
         <div className="header-titles">
             <span className='header-title-sm'>Anime & Manga</span>
-            <span className='header-title-lg'>Blog</span>
+            <span className='header-title-lg'>BLOG</span>
         </div>
         <img className='headerImg' src={HeroBanner} alt='' />
     </div>
