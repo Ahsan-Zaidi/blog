@@ -1,5 +1,5 @@
 import './header.css';
-import HeroBanner from '../assets/img/Herobanner.jpg';
+import HeroBanner from '../../assets/img/Herobanner.jpg';
 
 export default function Header() {
   return (
