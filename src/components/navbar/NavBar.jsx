@@ -1,7 +1,10 @@
+import { Link } from 'react-router-dom';
 import './navbar.css';
 
 export default function NavBar() {
-  return (
+    const user = false;
+
+    return (
     <div className='nav'>
         <div className="nav-left">
             <i className="nav-icon fa-brands fa-square-facebook"></i>
@@ -11,21 +14,44 @@ export default function NavBar() {
         </div>
         <div className="nav-center">
             <ul className="nav-list">
-                <li className='nav-list-item'>HOME</li>
-                <li className='nav-list-item'>ABOUT</li>
-                <li className='nav-list-item'>CONTACT</li>
-                <li className='nav-list-item'>WRITE</li>
-                <li className='nav-list-item'>LOGOUT</li>
+                <li className='nav-list-item'>
+                    <Link className='link' to='/'>HOME</Link>
+                </li>
+                <li className='nav-list-item'>
+                    <Link className='link' to='/'>ABOUT</Link>
+                </li>
+                <li className='nav-list-item'>
+                    <Link className='link' to='/'>CONTACT</Link>
+                </li>
+                <li className='nav-list-item'>
+                    <Link className='link' to='/write'>WRITE</Link>
+                </li>
+                <li className='nav-list-item'>
+                    {user && "LOGOUT"}
+                </li>
             </ul>
         </div>
         <div className="nav-right">
-            <img
-                className='navImg' 
-                src='https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500' 
-                alt=''
-            />
+            {
+                user ? (
+                    <img
+                        className='navImg' 
+                        src='https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500' 
+                        alt=''
+                    />
+                ) : (
+                    <ul className='nav-list'>
+                        <li className='nav-list-item'>
+                            <Link className='link' to='/login'>LOGIN</Link>
+                        </li>
+                        <li className='nav-list-item'>
+                            <Link className='link' to='/register'>REGISTER</Link> 
+                        </li> 
+                    </ul>
+                )
+            }
             <i className="nav-search-icon fa-solid fa-magnifying-glass"></i>
         </div>
     </div>
-  )
-}
+    )
+    }
