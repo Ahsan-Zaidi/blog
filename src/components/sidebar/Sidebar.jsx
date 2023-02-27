@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './sidebar.css';
 import aboutImg from '../../assets/img/Aboutimg.jpg';
 
@@ -14,12 +15,36 @@ export default function Sidebar() {
         <div className="sidebar-item">
             <span className='sidebar-title'>CATEGORIES</span>
             <ul className="sidebar-list">
-                <li className="sidebar-list-item">Plot</li>
-                <li className="sidebar-list-item">Soundtrack</li>
-                <li className="sidebar-list-item">Style</li>
-                <li className="sidebar-list-item">Characters</li>
-                <li className="sidebar-list-item">Fights</li>
-                <li className="sidebar-list-item">Theme</li>
+                <li className="sidebar-list-item">
+                    <Link className="link" to="/posts?category=Plot">
+                        Plot
+                    </Link>
+                </li>
+                <li className="sidebar-list-item">
+                    <Link className="link" to="/posts?category=Soundtrack">
+                        Soundtrack
+                    </Link>
+                </li>
+                <li className="sidebar-list-item">
+                    <Link className="link" to="/posts?category=Style">
+                        Style
+                    </Link>
+                </li>
+                <li className="sidebar-list-item">
+                    <Link className="link" to="/posts?category=Characters">
+                        Characters
+                    </Link>
+                </li>
+                <li className="sidebar-list-item">
+                    <Link className="link" to="/posts?category=Fights">
+                        Fights
+                    </Link>
+                </li>
+                <li className="sidebar-list-item">
+                    <Link className="link" to="/posts?category=Theme">
+                        Theme
+                    </Link>
+                </li>
             </ul>
         </div>
         <div className="sidebar-item">

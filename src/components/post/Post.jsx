@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './post.css';
 import postImg from '../../assets/img/Postimg.jpg';
 
@@ -11,11 +12,21 @@ export default function Post() {
         />
         <div className="post-info">
             <div className="post-categories">
-                <span className='post-category'>Plot</span>
-                <span className='post-category'>Soundtrack</span>
+                <span className='post-category'>
+                    <Link className='link' to='/posts?category=Plot'>
+                        Plot
+                    </Link>
+                </span>
+                <span className='post-category'>
+                    <Link className='link' to='/posts?category=Soundtrack'>
+                        Soundtrack
+                    </Link>
+                </span>
             </div>
             <span className="post-title">
-                Lorem, ipsum dolor sit amet
+                <Link to='/post/abc' className='link'>
+                    Lorem, ipsum dolor sit amet
+                </Link>
             </span>
             <hr/>
             <span className="post-date">1 hour ago</span>
