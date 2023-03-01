@@ -3,6 +3,7 @@ const app = express();
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const authRoute = require('./routes/auth');
+const userRoute = require('./routes/users');
 
 //configure enviornment file
 dotenv.config();
@@ -19,8 +20,10 @@ mongoose.connect(process.env.MONGO_URL, {
     .then(console.log('Connected to MongoDB'))
     .catch(err => console.log(err));
 
-//register route
+//register-login route
 app.use("/server/auth", authRoute);
+//users update-delete route
+app.use("/server/users", userRoute)
 
 //connect/starting of the server
 app.listen('5000', () => {
