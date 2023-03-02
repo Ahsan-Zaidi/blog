@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const authRoute = require('./routes/auth');
 const userRoute = require('./routes/users');
+const postRoute = require('./routes/posts');
 
 //configure enviornment file
 dotenv.config();
@@ -23,7 +24,9 @@ mongoose.connect(process.env.MONGO_URL, {
 //register-login route
 app.use("/server/auth", authRoute);
 //users update-delete route
-app.use("/server/users", userRoute)
+app.use("/server/users", userRoute);
+//post CRUD routes
+app.use("/server/posts", postRoute);
 
 //connect/starting of the server
 app.listen('5000', () => {
