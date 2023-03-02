@@ -75,6 +75,7 @@ router.get("/:id", async (req, res) => {
 
 //GET ALL POSTS
 router.get("/", async (req, res) => {
+    //included query options within post group
     const username = req.query.user;
     const catName = req.query.cat;
     try {
