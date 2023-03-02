@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const authRoute = require('./routes/auth');
 const userRoute = require('./routes/users');
 const postRoute = require('./routes/posts');
+const categoryRoute = require('./routes/categories');
 
 //configure enviornment file
 dotenv.config();
@@ -27,6 +28,8 @@ app.use("/server/auth", authRoute);
 app.use("/server/users", userRoute);
 //post CRUD routes
 app.use("/server/posts", postRoute);
+//catgory get route
+app.use("/server/categories", categoryRoute);
 
 //connect/starting of the server
 app.listen('5000', () => {
